@@ -4,10 +4,10 @@ export async function insertCategory(req, res) {
   const { name } = req.body;
   try {
     const result = await serviceInsertCategory(name);
-    if (result.message > 0) {
+    if (result.status) {
       return res.status(201).send("new category created");
     }
-    res.sendStatus(400);
+    res.status(409).send(result.message);
   } catch {
     res.sendStatus(500);
   }
