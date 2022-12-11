@@ -6,7 +6,7 @@ export async function repositoryFindCategoryByName(name) {
       "SELECT * FROM categories WHERE name=$1",
       [name]
     );
-    return {status: true, message: category}
+    return { status: true, message: category };
   } catch {
     return { status: false, message: null };
   }

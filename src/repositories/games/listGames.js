@@ -16,7 +16,6 @@ export async function getGames(name = null) {
     );
     return { status: true, message: allGames };
   } catch (err) {
-    console.log(err);
     return { status: false, message: null };
   }
 }

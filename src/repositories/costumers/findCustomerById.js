@@ -1,12 +1,16 @@
-import { connection } from "../../database/connection.js"
+import { connection } from "../../database/connection.js";
 
-export async function findCustomerById(id){
-  try{
-    const customer = await connection.query(`
+export async function findCustomerById(id) {
+  try {
+    const customer = await connection.query(
+      `
       SELECT * FROM customers WHERE id=$1
-    `, [id])
-    return {status: true, message: customer.rows}
-  }catch(err){
-    return {status: false, message: err}
+    `,
+      [id]
+    );
+
+    return { status: true, message: customer.rows };
+  } catch (err) {
+    return { status: false, message: err };
   }
 }

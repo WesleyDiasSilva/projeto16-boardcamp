@@ -5,7 +5,7 @@ import { middlewareInsertCategory } from "../middlewares/middlewareInsertCategor
 
 const route = Router();
 
-route.get("/categories", listCategories)
-route.post("/categories",middlewareInsertCategory, insertCategory)
+route.get("/categories", listCategories);
+route.post("/categories", middlewareInsertCategory, insertCategory);
 
 export default route;

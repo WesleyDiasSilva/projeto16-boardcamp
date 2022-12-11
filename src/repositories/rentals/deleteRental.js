@@ -1,13 +1,12 @@
 import { connection } from "../../database/connection.js";
 
-export async function updateCustomer(customer) {
-  const { name, phone, cpf, birthday, id } = customer;
+export async function deleteRentalRepository(id) {
   try {
     await connection.query(
       `
-      UPDATE customers SET name=$1, phone=$2, cpf=$3, birthday=$4 WHERE id=$5
+      DELETE FROM rentals WHERE id=$1
     `,
-      [name, phone, cpf, birthday, id]
+      [id]
     );
     return { status: true, message: null };
   } catch (err) {

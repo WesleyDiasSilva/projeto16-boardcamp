@@ -1,7 +1,7 @@
 import { serviceGetCostumers } from "../../services/costumers/serviceGetCostumers.js";
 
 export async function listCostumers(req, res) {
-  const {id} = req.params;
+  const { id } = req.params;
   try {
     const costumers = await serviceGetCostumers(id);
     if (costumers.status) {

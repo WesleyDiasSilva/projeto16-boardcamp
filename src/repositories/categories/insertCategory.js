@@ -6,8 +6,8 @@ export async function repositoryInsertCategory(name) {
       "INSERT INTO categories (name) VALUES ($1)",
       [name]
     );
-    return {status: true, message: result}
-  } catch(err) {
+    return { status: true, message: result };
+  } catch (err) {
     return { status: false, message: null };
   }
 }

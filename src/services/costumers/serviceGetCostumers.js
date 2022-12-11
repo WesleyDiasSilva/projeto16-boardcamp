@@ -9,13 +9,11 @@ export async function serviceGetCostumers(id = null) {
     }
     const costumers = await getCostumers();
     if (costumers.message.length) {
-      const birthdayClean = costumers.message[0].birthday
-      console.log(birthdayClean);
+      const birthdayClean = costumers.message[0].birthday;
       return { status: true, message: costumers.message };
     }
     return { status: false, message: "Costumers not found!" };
   } catch (err) {
-    console.log(err);
     return { status: false, message: err };
   }
 }
